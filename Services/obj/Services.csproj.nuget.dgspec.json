@@ -1,23 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "D:\\Projects\\PIMS\\Services\\Services.csproj": {}
+    "D:\\projects\\PIMSProject\\Services\\Services.csproj": {}
   },
   "projects": {
-    "D:\\Projects\\PIMS\\Entities\\Entities.csproj": {
+    "D:\\projects\\PIMSProject\\Entities\\Entities.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Projects\\PIMS\\Entities\\Entities.csproj",
+        "projectUniqueName": "D:\\projects\\PIMSProject\\Entities\\Entities.csproj",
         "projectName": "Entities",
-        "projectPath": "D:\\Projects\\PIMS\\Entities\\Entities.csproj",
-        "packagesPath": "C:\\Users\\Yogesh\\.nuget\\packages\\",
-        "outputPath": "D:\\Projects\\PIMS\\Entities\\obj\\",
+        "projectPath": "D:\\projects\\PIMSProject\\Entities\\Entities.csproj",
+        "packagesPath": "C:\\Users\\win10\\.nuget\\packages\\",
+        "outputPath": "D:\\projects\\PIMSProject\\Entities\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
-        ],
         "configFilePaths": [
-          "C:\\Users\\Yogesh\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\win10\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -84,20 +81,17 @@
         }
       }
     },
-    "D:\\Projects\\PIMS\\ServiceContracts\\ServiceContracts.csproj": {
+    "D:\\projects\\PIMSProject\\ServiceContracts\\ServiceContracts.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Projects\\PIMS\\ServiceContracts\\ServiceContracts.csproj",
+        "projectUniqueName": "D:\\projects\\PIMSProject\\ServiceContracts\\ServiceContracts.csproj",
         "projectName": "ServiceContracts",
-        "projectPath": "D:\\Projects\\PIMS\\ServiceContracts\\ServiceContracts.csproj",
-        "packagesPath": "C:\\Users\\Yogesh\\.nuget\\packages\\",
-        "outputPath": "D:\\Projects\\PIMS\\ServiceContracts\\obj\\",
+        "projectPath": "D:\\projects\\PIMSProject\\ServiceContracts\\ServiceContracts.csproj",
+        "packagesPath": "C:\\Users\\win10\\.nuget\\packages\\",
+        "outputPath": "D:\\projects\\PIMSProject\\ServiceContracts\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
-        ],
         "configFilePaths": [
-          "C:\\Users\\Yogesh\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\win10\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -112,8 +106,8 @@
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "D:\\Projects\\PIMS\\Entities\\Entities.csproj": {
-                "projectPath": "D:\\Projects\\PIMS\\Entities\\Entities.csproj"
+              "D:\\projects\\PIMSProject\\Entities\\Entities.csproj": {
+                "projectPath": "D:\\projects\\PIMSProject\\Entities\\Entities.csproj"
               }
             }
           }
@@ -152,20 +146,17 @@
         }
       }
     },
-    "D:\\Projects\\PIMS\\Services\\Services.csproj": {
+    "D:\\projects\\PIMSProject\\Services\\Services.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Projects\\PIMS\\Services\\Services.csproj",
+        "projectUniqueName": "D:\\projects\\PIMSProject\\Services\\Services.csproj",
         "projectName": "Services",
-        "projectPath": "D:\\Projects\\PIMS\\Services\\Services.csproj",
-        "packagesPath": "C:\\Users\\Yogesh\\.nuget\\packages\\",
-        "outputPath": "D:\\Projects\\PIMS\\Services\\obj\\",
+        "projectPath": "D:\\projects\\PIMSProject\\Services\\Services.csproj",
+        "packagesPath": "C:\\Users\\win10\\.nuget\\packages\\",
+        "outputPath": "D:\\projects\\PIMSProject\\Services\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
-        ],
         "configFilePaths": [
-          "C:\\Users\\Yogesh\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\win10\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -180,11 +171,11 @@
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "D:\\Projects\\PIMS\\Entities\\Entities.csproj": {
-                "projectPath": "D:\\Projects\\PIMS\\Entities\\Entities.csproj"
+              "D:\\projects\\PIMSProject\\Entities\\Entities.csproj": {
+                "projectPath": "D:\\projects\\PIMSProject\\Entities\\Entities.csproj"
               },
-              "D:\\Projects\\PIMS\\ServiceContracts\\ServiceContracts.csproj": {
-                "projectPath": "D:\\Projects\\PIMS\\ServiceContracts\\ServiceContracts.csproj"
+              "D:\\projects\\PIMSProject\\ServiceContracts\\ServiceContracts.csproj": {
+                "projectPath": "D:\\projects\\PIMSProject\\ServiceContracts\\ServiceContracts.csproj"
               }
             }
           }

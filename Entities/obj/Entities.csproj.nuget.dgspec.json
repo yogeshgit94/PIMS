@@ -1,23 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "D:\\Projects\\PIMS\\Entities\\Entities.csproj": {}
+    "D:\\projects\\PIMSProject\\Entities\\Entities.csproj": {}
   },
   "projects": {
-    "D:\\Projects\\PIMS\\Entities\\Entities.csproj": {
+    "D:\\projects\\PIMSProject\\Entities\\Entities.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Projects\\PIMS\\Entities\\Entities.csproj",
+        "projectUniqueName": "D:\\projects\\PIMSProject\\Entities\\Entities.csproj",
         "projectName": "Entities",
-        "projectPath": "D:\\Projects\\PIMS\\Entities\\Entities.csproj",
-        "packagesPath": "C:\\Users\\Yogesh\\.nuget\\packages\\",
-        "outputPath": "D:\\Projects\\PIMS\\Entities\\obj\\",
+        "projectPath": "D:\\projects\\PIMSProject\\Entities\\Entities.csproj",
+        "packagesPath": "C:\\Users\\win10\\.nuget\\packages\\",
+        "outputPath": "D:\\projects\\PIMSProject\\Entities\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
-        ],
         "configFilePaths": [
-          "C:\\Users\\Yogesh\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\win10\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [

@@ -2887,23 +2887,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Yogesh\\.nuget\\packages\\": {},
-    "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
+    "C:\\Users\\win10\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\Projects\\PIMS\\Services\\Services.csproj",
+      "projectUniqueName": "D:\\projects\\PIMSProject\\Services\\Services.csproj",
       "projectName": "Services",
-      "projectPath": "D:\\Projects\\PIMS\\Services\\Services.csproj",
-      "packagesPath": "C:\\Users\\Yogesh\\.nuget\\packages\\",
-      "outputPath": "D:\\Projects\\PIMS\\Services\\obj\\",
+      "projectPath": "D:\\projects\\PIMSProject\\Services\\Services.csproj",
+      "packagesPath": "C:\\Users\\win10\\.nuget\\packages\\",
+      "outputPath": "D:\\projects\\PIMSProject\\Services\\obj\\",
       "projectStyle": "PackageReference",
-      "fallbackFolders": [
-        "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
-      ],
       "configFilePaths": [
-        "C:\\Users\\Yogesh\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\win10\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -2918,11 +2914,11 @@
         "net8.0": {
           "targetAlias": "net8.0",
           "projectReferences": {
-            "D:\\Projects\\PIMS\\Entities\\Entities.csproj": {
-              "projectPath": "D:\\Projects\\PIMS\\Entities\\Entities.csproj"
+            "D:\\projects\\PIMSProject\\Entities\\Entities.csproj": {
+              "projectPath": "D:\\projects\\PIMSProject\\Entities\\Entities.csproj"
             },
-            "D:\\Projects\\PIMS\\ServiceContracts\\ServiceContracts.csproj": {
-              "projectPath": "D:\\Projects\\PIMS\\ServiceContracts\\ServiceContracts.csproj"
+            "D:\\projects\\PIMSProject\\ServiceContracts\\ServiceContracts.csproj": {
+              "projectPath": "D:\\projects\\PIMSProject\\ServiceContracts\\ServiceContracts.csproj"
             }
           }
         }

@@ -15,3 +15,21 @@ D:\Projects\coreapplication\All soft project documents\ProductInventoryMS\Servic
 D:\Projects\coreapplication\All soft project documents\ProductInventoryMS\Services\bin\Debug\net8.0\Entities.pdb
 D:\Projects\coreapplication\All soft project documents\ProductInventoryMS\Services\bin\Debug\net8.0\ServiceContracts.pdb
 D:\Projects\coreapplication\All soft project documents\ProductInventoryMS\Services\obj\Debug\net8.0\Services.csproj.Up2Date
+D:\projects\PIMSProject\Services\bin\Debug\net8.0\Services.deps.json
+D:\projects\PIMSProject\Services\bin\Debug\net8.0\Services.dll
+D:\projects\PIMSProject\Services\bin\Debug\net8.0\Services.pdb
+D:\projects\PIMSProject\Services\bin\Debug\net8.0\Entities.dll
+D:\projects\PIMSProject\Services\bin\Debug\net8.0\ServiceContracts.dll
+D:\projects\PIMSProject\Services\bin\Debug\net8.0\Entities.pdb
+D:\projects\PIMSProject\Services\bin\Debug\net8.0\ServiceContracts.pdb
+D:\projects\PIMSProject\Services\obj\Debug\net8.0\Services.csproj.AssemblyReference.cache
+D:\projects\PIMSProject\Services\obj\Debug\net8.0\Services.GeneratedMSBuildEditorConfig.editorconfig
+D:\projects\PIMSProject\Services\obj\Debug\net8.0\Services.AssemblyInfoInputs.cache
+D:\projects\PIMSProject\Services\obj\Debug\net8.0\Services.AssemblyInfo.cs
+D:\projects\PIMSProject\Services\obj\Debug\net8.0\Services.csproj.CoreCompileInputs.cache
+D:\projects\PIMSProject\Services\obj\Debug\net8.0\Services.sourcelink.json
+D:\projects\PIMSProject\Services\obj\Debug\net8.0\Services.csproj.Up2Date
+D:\projects\PIMSProject\Services\obj\Debug\net8.0\Services.dll
+D:\projects\PIMSProject\Services\obj\Debug\net8.0\refint\Services.dll
+D:\projects\PIMSProject\Services\obj\Debug\net8.0\Services.pdb
+D:\projects\PIMSProject\Services\obj\Debug\net8.0\ref\Services.dll

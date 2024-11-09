@@ -12,3 +12,18 @@ D:\Projects\coreapplication\All soft project documents\ProductInventoryMS\Entiti
 D:\Projects\coreapplication\All soft project documents\ProductInventoryMS\Entities\obj\Debug\net8.0\Entities.pdb
 D:\Projects\coreapplication\All soft project documents\ProductInventoryMS\Entities\obj\Debug\net8.0\Entities.genruntimeconfig.cache
 D:\Projects\coreapplication\All soft project documents\ProductInventoryMS\Entities\obj\Debug\net8.0\ref\Entities.dll
+D:\projects\PIMSProject\Entities\bin\Debug\net8.0\Entities.deps.json
+D:\projects\PIMSProject\Entities\bin\Debug\net8.0\Entities.runtimeconfig.json
+D:\projects\PIMSProject\Entities\bin\Debug\net8.0\Entities.dll
+D:\projects\PIMSProject\Entities\bin\Debug\net8.0\Entities.pdb
+D:\projects\PIMSProject\Entities\obj\Debug\net8.0\Entities.csproj.AssemblyReference.cache
+D:\projects\PIMSProject\Entities\obj\Debug\net8.0\Entities.GeneratedMSBuildEditorConfig.editorconfig
+D:\projects\PIMSProject\Entities\obj\Debug\net8.0\Entities.AssemblyInfoInputs.cache
+D:\projects\PIMSProject\Entities\obj\Debug\net8.0\Entities.AssemblyInfo.cs
+D:\projects\PIMSProject\Entities\obj\Debug\net8.0\Entities.csproj.CoreCompileInputs.cache
+D:\projects\PIMSProject\Entities\obj\Debug\net8.0\Entities.sourcelink.json
+D:\projects\PIMSProject\Entities\obj\Debug\net8.0\Entities.dll
+D:\projects\PIMSProject\Entities\obj\Debug\net8.0\refint\Entities.dll
+D:\projects\PIMSProject\Entities\obj\Debug\net8.0\Entities.pdb
+D:\projects\PIMSProject\Entities\obj\Debug\net8.0\Entities.genruntimeconfig.cache
+D:\projects\PIMSProject\Entities\obj\Debug\net8.0\ref\Entities.dll
