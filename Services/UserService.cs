@@ -38,8 +38,8 @@ namespace Services
 
         private string HashPassword(string password)
         {
-            // Implement password hashing logic (for example, using SHA-256)
-            return password; // Simplified for example purposes
+            
+            return password; 
         }       
     }
 }

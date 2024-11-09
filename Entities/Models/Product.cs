@@ -13,11 +13,7 @@ namespace Entities.Models
         public string Description { get; set; }
         public decimal Price { get; set; }
         public string SKU { get; set; } // Unique SKU
-        public DateTime CreatedDate { get; set; }
-
-        // Navigation property to establish a one-to-many relationship
-        //public ICollection<Inventory> Inventories { get; set; }
-        //public ICollection<Category> Categories { get; set; } = new List<Category>();
+        public DateTime CreatedDate { get; set; }       
         public ICollection<ProductCategory> Categories { get; set; } = new List<ProductCategory>();
     }
 }

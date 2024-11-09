@@ -75,28 +75,6 @@ namespace Services
         public Task DeleteProductAsync(int id)
         {
             throw new NotImplementedException();
-        }
-
-        //Task<IEnumerable<Product>> IProductService.GetAllProductsAsync()
-        //{
-        //    throw new NotImplementedException();
-        //}
-
-        //Task<Product> IProductService.GetProductByIdAsync(int id)
-        //{
-        //    throw new NotImplementedException();
-        //}
-
-        //public Task AddProductAsync(Product product)
-        //{
-        //    throw new NotImplementedException();
-        //}
-
-        //public Task UpdateProductAsync(Product product) => throw new NotImplementedException();
-
-        //public Task DeleteProductAsync(int id)
-        //{
-        //    throw new NotImplementedException();
-        //}
+        }        
     }
 }

@@ -17,7 +17,7 @@ namespace Entities.Models
         // To record transaction details
         public DateTime LastUpdated { get; set; }
         public string UpdateReason { get; set; }
-        public int UserID { get; set; } // Reference to user who made the change
+        public int UserID { get; set; } 
 
     }
 }
