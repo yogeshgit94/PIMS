@@ -29,6 +29,7 @@ namespace Services
             await _context.SaveChangesAsync();
         }
 
+        //authentication user
         public async Task<User> AuthenticateUserAsync(string username, string password)
         {
             var hashedPassword = HashPassword(password);
