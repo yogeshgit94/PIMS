@@ -12,8 +12,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Entities.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20241108191653_initial")]
-    partial class initial
+    [Migration("20241109090647_AddTables")]
+    partial class AddTables
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -126,6 +126,24 @@ namespace Entities.Migrations
                     b.ToTable("ProductCategories");
                 });
 
+            modelBuilder.Entity("Entities.Models.RoleMaster", b =>
+                {
+                    b.Property<int>("RoleID")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("RoleID"));
+
+                    b.Property<string>("Role")
+                        .IsRequired()
+                        .HasMaxLength(20)
+                        .HasColumnType("nvarchar(20)");
+
+                    b.HasKey("RoleID");
+
+                    b.ToTable("RoleMaster", (string)null);
+                });
+
             modelBuilder.Entity("Entities.Models.User", b =>
                 {
                     b.Property<int>("UserID")
@@ -136,17 +154,20 @@ namespace Entities.Migrations
 
                     b.Property<string>("PasswordHash")
                         .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                        .HasMaxLength(99)
+                        .HasColumnType("nvarchar(99)");
 
-                    b.Property<string>("Role")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                    b.Property<int>("RoleID")
+                        .HasColumnType("int");
 
                     b.Property<string>("Username")
                         .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                        .HasMaxLength(99)
+                        .HasColumnType("nvarchar(99)");
 
                     b.HasKey("UserID");
+
+                    b.HasIndex("RoleID");
 
                     b.ToTable("Users");
                 });
@@ -179,6 +200,15 @@ namespace Entities.Migrations
                     b.Navigation("Category");
 
                     b.Navigation("Product");
+                });
+
+            modelBuilder.Entity("Entities.Models.User", b =>
+                {
+                    b.HasOne("Entities.Models.RoleMaster", null)
+                        .WithMany()
+                        .HasForeignKey("RoleID")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
                 });
 
             modelBuilder.Entity("Entities.Models.Category", b =>
