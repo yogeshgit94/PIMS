@@ -5,16 +5,17 @@ using System.Text;
 using System.Threading.Tasks;
 using Entities;
 using Entities.Models;
+using ServiceContracts.DTO;
 
 namespace ServiceContracts
 {
     public interface IProductService
-    {
-        Task<IEnumerable<Product>> GetAllProductsAsync();
-        Task<Product> GetProductByIdAsync(int id);
-        Task AddProductAsync(Product product);
-        Task UpdateProductAsync(Product product);
-        Task DeleteProductAsync(int id);
+    {        
+        Task<IEnumerable<ProductResponseDTO>> GetAllProductsAsync();
+        Task<ProductResponseDTO> GetProductByIdAsync(int productId);      
+        Task AddProductAsync(ProductInputDTO productDto);        
+        Task<string> UpdateProductAsync(int productId, ProductUpdateDTO updatedProduct);        
         Task AdjustPriceAsync(int productId, decimal adjustmentAmount, bool isPercentage);
+        Task<IEnumerable<Product>> GetProductsByCategoryAsync(int categoryId);
     }
 }

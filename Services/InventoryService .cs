@@ -14,6 +14,7 @@ namespace Services
             _context = context;
         }
 
+        #region GetLowInventoryItemsAsync
         public async Task<IEnumerable<Inventory>> GetLowInventoryItemsAsync(int threshold)
         {
             return await _context.Inventories
@@ -21,6 +22,9 @@ namespace Services
                                  .Include(i => i.Product)
                                  .ToListAsync();
         }
+        #endregion
+
+        #region AddInventoryTransactionAsync
 
         public async Task AddInventoryTransactionAsync(int productId, int quantity, string reason, int userId)
         {
@@ -41,20 +45,28 @@ namespace Services
 
             await _context.SaveChangesAsync();
         }
+        #endregion
 
+        #region GetInventoryByProductIdAsync
         public Task<IEnumerable<Inventory>> GetInventoryByProductIdAsync(int productId)
         {
             throw new NotImplementedException();
         }
 
+        #endregion
+
+        #region UpdateInventoryAsync
         public Task UpdateInventoryAsync(int productId, int quantity)
         {
             throw new NotImplementedException();
         }
+        #endregion
 
+        #region GetLowInventoryItemsAsync
         Task<List<Inventory>> IInventoryService.GetLowInventoryItemsAsync(int threshold)
         {
             throw new NotImplementedException();
         }
+        #endregion
     }
 }

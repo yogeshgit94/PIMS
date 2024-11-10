@@ -11,11 +11,14 @@ namespace Entities
     public class ApplicationDbContext:DbContext
     {
         public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options) : base(options) { }
+
+
         public DbSet<Product> Products { get; set; }
         public DbSet<Category> Categories { get; set; }
+        public DbSet<ProductCategory> ProductCategories { get; set; }       
         public DbSet<Inventory> Inventories { get; set; }
         public DbSet<User> Users { get; set; }
-        public DbSet<ProductCategory> ProductCategories { get; set; }
+        
         public DbSet<RoleMaster> RoleMasters { get; set; }
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
@@ -24,16 +27,16 @@ namespace Entities
                 .IsUnique();
 
             modelBuilder.Entity<ProductCategory>()
-                .HasKey(pc => new { pc.ProductID, pc.CategoryID });
+              .HasKey(pc => new { pc.ProductID, pc.CategoryID });           
 
             modelBuilder.Entity<ProductCategory>()
                 .HasOne(pc => pc.Product)
-                .WithMany(p => p.Categories)
+                .WithMany(p => p.ProductCategories)
                 .HasForeignKey(pc => pc.ProductID);
 
             modelBuilder.Entity<ProductCategory>()
                 .HasOne(pc => pc.Category)
-                .WithMany(c => c.Products)
+                .WithMany(c => c.ProductCategories)
                 .HasForeignKey(pc => pc.CategoryID);
 
             modelBuilder.Entity<RoleMaster>(entity =>
