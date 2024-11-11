@@ -1,13 +1,10 @@
 ﻿using Entities;
 using Entities.Models;
 using Microsoft.EntityFrameworkCore;
+using PIMS.Exceptions;
 using ServiceContracts;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using ServiceContracts.DTO;
+
 
 namespace Services
 {
@@ -94,7 +91,7 @@ namespace Services
         public async Task AdjustPriceAsync(int productId, decimal adjustmentAmount, bool isPercentage)
         {
             var product = await _context.Products.FindAsync(productId);
-            if (product == null) throw new KeyNotFoundException("Product not found");
+            if (product == null) throw new KeyNotFoundException ("Product not found");
 
             decimal adjustment = isPercentage ? product.Price * adjustmentAmount / 100 : adjustmentAmount;
             product.Price=product.Price+adjustment>0?product.Price + adjustment:0;

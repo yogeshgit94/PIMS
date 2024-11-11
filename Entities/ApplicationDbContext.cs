@@ -17,6 +17,7 @@ namespace Entities
         public DbSet<Category> Categories { get; set; }
         public DbSet<ProductCategory> ProductCategories { get; set; }       
         public DbSet<Inventory> Inventories { get; set; }
+        public DbSet<InventoryTransaction> InventoryTransactions { get; set; }
         public DbSet<User> Users { get; set; }
         
         public DbSet<RoleMaster> RoleMasters { get; set; }

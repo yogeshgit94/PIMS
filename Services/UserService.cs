@@ -12,6 +12,7 @@ using Microsoft.IdentityModel.Tokens;
 using System.IdentityModel.Tokens.Jwt;
 using System.Security.Claims;
 using Microsoft.Extensions.Configuration;
+using Services.Exceptions;
 
 
 namespace Services
@@ -46,17 +47,30 @@ namespace Services
         #region AuthenticateUserAsync
         public async Task<User> AuthenticateUserAsync(string username, string password)
         {
-            var user = await _context.Users.FirstOrDefaultAsync(u => u.Username == username);
-            if (user == null) return null;
+            //var user = await _context.Users.FirstOrDefaultAsync(u => u.Username == username);
+            //if (user == null) return null;
 
+            //var hashedPassword = HashPassword(password, user.PasswordSalt);
+            //return user.PasswordHash == hashedPassword ? user : null;
+
+            var user = await _context.Users.FirstOrDefaultAsync(u => u.Username == username);
+            if (user == null)
+            {                
+                throw new AuthenticationException("User not found.");
+            }            
             var hashedPassword = HashPassword(password, user.PasswordSalt);
-            return user.PasswordHash == hashedPassword ? user : null;
+            if (user.PasswordHash != hashedPassword)
+            {             
+                throw new AuthenticationException("Invalid password.");
+            }
+            return user;
+
         }
         #endregion
 
         #region GenerateSalt
         // Generate a salt for password hashing
-        private string GenerateSalt()
+        public string GenerateSalt()
         {
             byte[] saltBytes = new byte[16];
             using (var rng = new RNGCryptoServiceProvider())
@@ -69,7 +83,7 @@ namespace Services
 
         #region HashPassword
         // Hash password with salt
-        private string HashPassword(string password, string salt)
+        public string HashPassword(string password, string salt)
         {
             using (var sha256 = SHA256.Create())
             {
@@ -91,26 +105,22 @@ namespace Services
         #region GenerateJwtToken
         public async Task<string> GenerateJwtToken(User user)
         {
-            var jwtKey = _configuration["Jwt:Key"];
-            var jwtIssuer = _configuration["Jwt:Issuer"];
-
-            var securityKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(jwtKey));
-            var credentials = new SigningCredentials(securityKey, SecurityAlgorithms.HmacSha256);
-
-            var claims = new List<Claim>
+            var claims = new[]
         {
             new Claim(ClaimTypes.Name, user.Username),
             new Claim(ClaimTypes.Role, user.RoleID == 1 ? "Administrator" : "User")
         };
-
+            var key = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_configuration["Jwt:SecretKey"]));
+            var creds = new SigningCredentials(key, SecurityAlgorithms.HmacSha256);
             var token = new JwtSecurityToken(
-                issuer: jwtIssuer,
-                audience: jwtIssuer,
+                issuer: _configuration["Jwt:Issuer"],
+                audience: _configuration["Jwt:Audience"],
                 claims: claims,
-                expires: DateTime.Now.AddHours(3),
-                signingCredentials: credentials);
+                expires: DateTime.Now.AddHours(1),
+                signingCredentials: creds
+            );
 
-            return new JwtSecurityTokenHandler().WriteToken(token);
+            return new JwtSecurityTokenHandler().WriteToken(token);                       
         }
         #endregion        
     }

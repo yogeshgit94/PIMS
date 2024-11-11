@@ -1,4 +1,5 @@
 ﻿using Entities.Models;
+using ServiceContracts.DTO;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,9 +10,11 @@ namespace ServiceContracts
 {
     public interface IInventoryService
     {
-        Task<IEnumerable<Inventory>> GetInventoryByProductIdAsync(int productId);
-        Task AddInventoryTransactionAsync(int productId, int quantity, string reason, int userId);
-        Task UpdateInventoryAsync(int productId, int quantity);
-        Task<List<Inventory>> GetLowInventoryItemsAsync(int threshold);
+        Task AdjustInventoryTransactionAsync(InventoryTransactionDTO transactionDto);
+        Task<List<LowInventoryAlertDTO>> GetLowInventoryAlertsAsync();
+        Task AuditInventoryAsync(InventoryAuditDTO auditDto);
+
+        // New method for adding inventory
+        Task AddInventoryAsync(AddInventoryDTO addInventoryDto);
     }
 }

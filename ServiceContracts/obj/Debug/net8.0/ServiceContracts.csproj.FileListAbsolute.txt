@@ -13,19 +13,19 @@ D:\Projects\coreapplication\All soft project documents\ProductInventoryMS\Servic
 D:\Projects\coreapplication\All soft project documents\ProductInventoryMS\ServiceContracts\bin\Debug\net8.0\Entities.pdb
 D:\Projects\coreapplication\All soft project documents\ProductInventoryMS\ServiceContracts\obj\Debug\net8.0\ServiceContracts.csproj.AssemblyReference.cache
 D:\Projects\coreapplication\All soft project documents\ProductInventoryMS\ServiceContracts\obj\Debug\net8.0\ServiceC.04662A29.Up2Date
-D:\projects\PIMSProject\ServiceContracts\bin\Debug\net8.0\ServiceContracts.deps.json
-D:\projects\PIMSProject\ServiceContracts\bin\Debug\net8.0\ServiceContracts.dll
-D:\projects\PIMSProject\ServiceContracts\bin\Debug\net8.0\ServiceContracts.pdb
-D:\projects\PIMSProject\ServiceContracts\bin\Debug\net8.0\Entities.dll
-D:\projects\PIMSProject\ServiceContracts\bin\Debug\net8.0\Entities.pdb
-D:\projects\PIMSProject\ServiceContracts\obj\Debug\net8.0\ServiceContracts.csproj.AssemblyReference.cache
-D:\projects\PIMSProject\ServiceContracts\obj\Debug\net8.0\ServiceContracts.GeneratedMSBuildEditorConfig.editorconfig
-D:\projects\PIMSProject\ServiceContracts\obj\Debug\net8.0\ServiceContracts.AssemblyInfoInputs.cache
-D:\projects\PIMSProject\ServiceContracts\obj\Debug\net8.0\ServiceContracts.AssemblyInfo.cs
-D:\projects\PIMSProject\ServiceContracts\obj\Debug\net8.0\ServiceContracts.csproj.CoreCompileInputs.cache
-D:\projects\PIMSProject\ServiceContracts\obj\Debug\net8.0\ServiceContracts.sourcelink.json
-D:\projects\PIMSProject\ServiceContracts\obj\Debug\net8.0\ServiceC.04662A29.Up2Date
-D:\projects\PIMSProject\ServiceContracts\obj\Debug\net8.0\ServiceContracts.dll
-D:\projects\PIMSProject\ServiceContracts\obj\Debug\net8.0\refint\ServiceContracts.dll
-D:\projects\PIMSProject\ServiceContracts\obj\Debug\net8.0\ServiceContracts.pdb
-D:\projects\PIMSProject\ServiceContracts\obj\Debug\net8.0\ref\ServiceContracts.dll
+D:\Projects\PIMSProject\ServiceContracts\bin\Debug\net8.0\ServiceContracts.deps.json
+D:\Projects\PIMSProject\ServiceContracts\bin\Debug\net8.0\ServiceContracts.dll
+D:\Projects\PIMSProject\ServiceContracts\bin\Debug\net8.0\ServiceContracts.pdb
+D:\Projects\PIMSProject\ServiceContracts\bin\Debug\net8.0\Entities.dll
+D:\Projects\PIMSProject\ServiceContracts\bin\Debug\net8.0\Entities.pdb
+D:\Projects\PIMSProject\ServiceContracts\obj\Debug\net8.0\ServiceContracts.csproj.AssemblyReference.cache
+D:\Projects\PIMSProject\ServiceContracts\obj\Debug\net8.0\ServiceContracts.GeneratedMSBuildEditorConfig.editorconfig
+D:\Projects\PIMSProject\ServiceContracts\obj\Debug\net8.0\ServiceContracts.AssemblyInfoInputs.cache
+D:\Projects\PIMSProject\ServiceContracts\obj\Debug\net8.0\ServiceContracts.AssemblyInfo.cs
+D:\Projects\PIMSProject\ServiceContracts\obj\Debug\net8.0\ServiceContracts.csproj.CoreCompileInputs.cache
+D:\Projects\PIMSProject\ServiceContracts\obj\Debug\net8.0\ServiceContracts.sourcelink.json
+D:\Projects\PIMSProject\ServiceContracts\obj\Debug\net8.0\ServiceC.04662A29.Up2Date
+D:\Projects\PIMSProject\ServiceContracts\obj\Debug\net8.0\ServiceContracts.dll
+D:\Projects\PIMSProject\ServiceContracts\obj\Debug\net8.0\refint\ServiceContracts.dll
+D:\Projects\PIMSProject\ServiceContracts\obj\Debug\net8.0\ServiceContracts.pdb
+D:\Projects\PIMSProject\ServiceContracts\obj\Debug\net8.0\ref\ServiceContracts.dll
