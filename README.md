@@ -58,5 +58,8 @@ for update the particular product details
 Post:/api/v{version}/Product/{productId}/adjust-price
 ENter product ID ,versionno, Adjustment Amount , if you want to adjust according to percentage select isPercentage true or else false
 -------------------------------------------------------------------------------------------------------------------------------------
-And Other Tasks is now continue in process.........
+Update the Funtioanlity of Product 
+work on Inventory 
+Maintain Error handling, sirilog,AND JWT authentication Bearer and Apply the documentation on API for how to use the API 
+create  Unit test for user and product
  
