@@ -33,7 +33,7 @@ namespace Services
         public async Task RegisterUserAsync(User user)
         {
             if (await _context.Users.AnyAsync(u => u.Username == user.Username))
-                throw new InvalidOperationException("Username already exists");
+                throw new UserAlreadyExistsException("Username already exists");
 
             var salt = GenerateSalt();
             user.PasswordSalt = salt;
@@ -46,22 +46,16 @@ namespace Services
 
         #region AuthenticateUserAsync
         public async Task<User> AuthenticateUserAsync(string username, string password)
-        {
-            //var user = await _context.Users.FirstOrDefaultAsync(u => u.Username == username);
-            //if (user == null) return null;
-
-            //var hashedPassword = HashPassword(password, user.PasswordSalt);
-            //return user.PasswordHash == hashedPassword ? user : null;
-
+        {           
             var user = await _context.Users.FirstOrDefaultAsync(u => u.Username == username);
             if (user == null)
             {                
-                throw new AuthenticationException("User not found.");
+                throw new UserNotFoundException("User not found.");
             }            
             var hashedPassword = HashPassword(password, user.PasswordSalt);
             if (user.PasswordHash != hashedPassword)
             {             
-                throw new AuthenticationException("Invalid password.");
+                throw new InvalidPasswordException("Invalid password.");
             }
             return user;
 

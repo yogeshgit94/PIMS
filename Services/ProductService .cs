@@ -4,6 +4,8 @@ using Microsoft.EntityFrameworkCore;
 using PIMS.Exceptions;
 using ServiceContracts;
 using ServiceContracts.DTO;
+using Services.Exceptions;
+using static Services.Exceptions.ProductIDNotFoundException;
 
 
 namespace Services
@@ -52,7 +54,7 @@ namespace Services
 
             if (product == null)
             {
-                return null; // Return null if product is not found
+                throw new ProductIDNotFoundException("Product ID not Found");
             }
 
             // Map to ProductDto and return
@@ -76,6 +78,18 @@ namespace Services
         #region GetProductsByCategoryAsync
         public async Task<IEnumerable<Product>> GetProductsByCategoryAsync(int categoryId)
         {
+
+            var Category = await _context.Products.FindAsync(categoryId);
+
+            //var Category = await _context.Categories
+            //    .Where(c => c.CategoryID == categoryId)                                   
+            //    .FirstOrDefaultAsync();
+
+            if (Category == null)
+            {
+                throw new CategoryIDNotFoundException("Category ID not Found");
+            }
+
             var products = await _context.Products
                                 .Where(p => p.ProductCategories
                                              .Any(pc => pc.CategoryID == categoryId)) // Filter products by category ID
@@ -91,7 +105,7 @@ namespace Services
         public async Task AdjustPriceAsync(int productId, decimal adjustmentAmount, bool isPercentage)
         {
             var product = await _context.Products.FindAsync(productId);
-            if (product == null) throw new KeyNotFoundException ("Product not found");
+            if (product == null) throw new ProductIDNotFoundException ("Product not found");
 
             decimal adjustment = isPercentage ? product.Price * adjustmentAmount / 100 : adjustmentAmount;
             product.Price=product.Price+adjustment>0?product.Price + adjustment:0;
@@ -150,7 +164,7 @@ namespace Services
 
             if (product == null)
             {
-                return "Product not found.";
+               return "Product not found.";
             }
 
             // Check if the SKU is unique

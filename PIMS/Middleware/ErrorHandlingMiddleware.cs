@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 using Services.Exceptions;
 using System.Text.Json;
 using static Services.Exceptions.InventoryAlreadyExistsException;
+using static Services.Exceptions.ProductIDNotFoundException;
 
 namespace PIMS.Middleware
 {
@@ -43,6 +44,29 @@ namespace PIMS.Middleware
 
             switch (exception)
             {
+
+                case UserAlreadyExistsException:
+                    status = HttpStatusCode.BadRequest;
+                    message = exception.Message;
+                    break;
+
+                case UserNotFoundException:
+                    status = HttpStatusCode.NotFound;
+                    message = exception.Message;
+                    break;
+
+                case InvalidPasswordException:
+                    status = HttpStatusCode.Unauthorized;
+                    message = exception.Message;
+                    break;
+
+                case AuthenticationException:
+                    status = HttpStatusCode.BadRequest;
+                    message = exception.Message;
+                    break;
+
+
+
                 case InventoryAlreadyExistsException:
                     status = HttpStatusCode.BadRequest;
                     message = exception.Message;
@@ -57,6 +81,17 @@ namespace PIMS.Middleware
                     status = HttpStatusCode.BadRequest;
                     message = exception.Message;
                     break;
+
+                case ProductIDNotFoundException:
+                    status = HttpStatusCode.BadRequest;
+                    message = exception.Message;
+                    break;
+
+                case CategoryIDNotFoundException:
+                    status = HttpStatusCode.BadRequest;
+                    message = exception.Message;
+                    break;
+
 
                 default:
                     status = HttpStatusCode.InternalServerError;
