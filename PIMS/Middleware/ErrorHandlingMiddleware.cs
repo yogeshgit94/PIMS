@@ -4,6 +4,9 @@ using Newtonsoft.Json;
 using System;
 using System.Net;
 using System.Threading.Tasks;
+using Services.Exceptions;
+using System.Text.Json;
+using static Services.Exceptions.InventoryAlreadyExistsException;
 
 namespace PIMS.Middleware
 {
@@ -18,6 +21,7 @@ namespace PIMS.Middleware
             _logger = logger;
         }
 
+
         public async Task InvokeAsync(HttpContext context)
         {
             try
@@ -27,12 +31,42 @@ namespace PIMS.Middleware
             catch (Exception ex)
             {
                 _logger.LogError($"An error occurred: {ex}");
-
-                context.Response.StatusCode = (int)HttpStatusCode.InternalServerError;
-                context.Response.ContentType = "application/json";
-                var errorResponse = new { message = "Something went wrong. Please try again later." };
-                await context.Response.WriteAsync(JsonConvert.SerializeObject(errorResponse));
+                await HandleExceptionAsync(context, ex);
             }
         }
+
+        private static Task HandleExceptionAsync(HttpContext context, Exception exception)
+        {
+            context.Response.ContentType = "application/json";
+            HttpStatusCode status;
+            string message;
+
+            switch (exception)
+            {
+                case InventoryAlreadyExistsException:
+                    status = HttpStatusCode.BadRequest;
+                    message = exception.Message;
+                    break;
+
+                case InventoryNotFoundException:
+                    status = HttpStatusCode.NotFound;
+                    message = exception.Message;
+                    break;
+
+                case InvalidTransactionException:
+                    status = HttpStatusCode.BadRequest;
+                    message = exception.Message;
+                    break;
+
+                default:
+                    status = HttpStatusCode.InternalServerError;
+                    message= exception.Message;
+                    break;
+            }
+
+            context.Response.StatusCode = (int)status;
+            var result = System.Text.Json.JsonSerializer.Serialize(new { message });
+            return context.Response.WriteAsync(result);
+        }        
     }
 }

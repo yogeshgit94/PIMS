@@ -3,6 +3,8 @@ using Entities.Models;
 using Microsoft.EntityFrameworkCore;
 using ServiceContracts;
 using ServiceContracts.DTO;
+using Services.Exceptions;
+using static Services.Exceptions.InventoryAlreadyExistsException;
 
 namespace Services
 {
@@ -24,8 +26,18 @@ namespace Services
 
             if (existingInventory != null)
             {
-                throw new InvalidOperationException("Inventory already exists for this product.");
+                throw new InventoryAlreadyExistsException("Inventory already exists for this product.");
             }
+
+            var product = await _context.Products
+                            .FirstOrDefaultAsync(p => p.ProductID == addInventoryDto.ProductID);
+            if (product == null)
+            {
+                throw new ProductIDDoestNotExitException($"Product with ID {addInventoryDto.ProductID} does not exist.");
+            }
+
+
+
 
             // Create new inventory item
             var newInventory = new Inventory
@@ -38,15 +50,22 @@ namespace Services
             };
 
             // Add the new inventory item to the database
-            _context.Inventories.Add(newInventory);
-            await _context.SaveChangesAsync();
+            try
+            {
+                _context.Inventories.Add(newInventory);
+                await _context.SaveChangesAsync();
+            }
+            catch(Exception ex)
+            {
+                string message = ex.InnerException.Message;
+            }
         }
 
         //Adjust Inventory Transaction
         public async Task AdjustInventoryTransactionAsync(InventoryTransactionDTO transactionDto)
         {
             var inventory = await _context.Inventories.FindAsync(transactionDto.InventoryID);
-            if (inventory == null) throw new InvalidOperationException("Inventory item not found.");
+            if (inventory == null) throw new InventoryNotFoundException("Inventory item not found.");
 
             // Adjust inventory quantity
             inventory.Quantity += transactionDto.QuantityChange;
@@ -84,7 +103,7 @@ namespace Services
         public async Task AuditInventoryAsync(InventoryAuditDTO auditDto)
         {
             var inventory = await _context.Inventories.FindAsync(auditDto.InventoryID);
-            if (inventory == null) throw new InvalidOperationException("Inventory item not found.");
+            if (inventory == null) throw new InventoryNotFoundException("Inventory item not found.");
 
             // Calculate quantity change for audit transaction
             int quantityChange = auditDto.NewQuantity - inventory.Quantity;

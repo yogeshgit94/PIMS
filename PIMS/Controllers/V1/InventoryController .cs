@@ -91,7 +91,7 @@ namespace PIMS.Controllers.V1
         public async Task<IActionResult> AddOrAdjustInventoryTransaction([FromBody] InventoryTransactionDTO transactionDto)
         {
             await _inventoryService.AdjustInventoryTransactionAsync(transactionDto);
-            return Ok("Inventory transaction added or adjusted successfully.");
+            return Ok("Inventory transaction adjusted successfully.");
         }
         #endregion
 
@@ -107,7 +107,7 @@ namespace PIMS.Controllers.V1
         ///
         /// **Responses**:
         /// - `200 OK`: A list of low inventory items, including their product name, quantity, and reorder threshold.
-        /// - `500 Internal Server Error`: An error occurred while retrieving the low inventory alerts.       
+        /// - `500 Internal Server Error'.       
         /// </remarks>
 
 
@@ -136,9 +136,9 @@ namespace PIMS.Controllers.V1
         /// }        
         ///
         /// **Responses**:
-        /// - `200 OK`: Inventory audited successfully and changes recorded.
-        /// - `400 Bad Request`: Invalid audit data or inventory item not found.
-        /// - `500 Internal Server Error`: An error occurred while performing the inventory audit.      
+        /// - `200 OK`: Inventory audited successfully..
+        /// - `400 Bad Request`: Inventory item not found..
+        /// - `500 Internal Server Error`.      
         /// </remarks>
 
 
